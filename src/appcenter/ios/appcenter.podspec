@@ -17,9 +17,11 @@ A new flutter plugin project.
   s.dependency 'Flutter'
   s.dependency 'AppCenter'
   s.platform = :ios, '8.0'
+  s.frameworks = 'AppCenter', 'Security', 'SystemConfiguration' # plus other frameworks you use
   s.static_framework = true
   s.pod_target_xcconfig = {
     'DEFINES_MODULE' => 'YES',
     'VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64',
+    'FRAMEWORK_SEARCH_PATHS' => '$(inherited) $(PODS_ROOT)/AppCenter/iOS'
   }
 end
